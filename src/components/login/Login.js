@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
-import {View,Text,StyleSheet,Image} from 'react-native';
+import {View,Text,StyleSheet,Image,StatusBar} from 'react-native';
+import LoginForm from './LoginForm'
 
 export default class Login extends Component {
   render(){
     return (
       <View style ={styles.container}>
+        <StatusBar hidden = {true}/>
         <View style = {styles.logoContainer}>
           <Image
             source = {require('../../../src/img/banana_logo.png')}
@@ -12,7 +14,9 @@ export default class Login extends Component {
           />
           <Text style = {styles.title}>Take the Quiz to Find Out What Kind of Banana You Are</Text>
         </View>
-        <View style = {styles.formContainer }></View>
+        <View style = {styles.formContainer }>
+          <LoginForm/>
+        </View>
 
     </View>
     );
@@ -31,15 +35,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   logo:{
-    width: 100,
-    height: 100
+    width: 140,
+    height: 140,
+    marginTop: 40
   },
   title:{
     color: '#130f40',
     marginTop: 10,
     width: 170,
     textAlign: 'center',
-    opacity: .8
+    opacity: .8,
+    fontWeight:'bold'
+  },
+  formContainer:{
+    marginBottom:50,
+    paddingBottom: 50
   }
 
 });
