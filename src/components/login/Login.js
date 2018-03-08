@@ -12,7 +12,7 @@ export default class Login extends Component {
               source = {require('../../../src/img/banana_logo.png')}
               style = {styles.logo}
             />
-            <Text style = {styles.title}>Take the Quiz to Find Out What Kind of Banana You Are</Text>
+            <Text style = {styles.title}>Take This Quiz to Find Out What Kind of Banana You Are!</Text>
           </View>
           <View style = {styles.formContainer }>
             <LoginForm/>
