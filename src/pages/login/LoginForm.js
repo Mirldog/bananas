@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import{StyleSheet, View, TextInput,Text, TouchableOpacity} from 'react-native';
 
-import Question from "../questions/Question";
+import Question from "../questions/QuestionPage";
 
 
  class LoginForm extends Component{

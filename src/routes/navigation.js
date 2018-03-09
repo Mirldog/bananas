@@ -1,7 +1,7 @@
 import React from 'react-native'
 import {StackNavigator} from 'react-navigation'
 import Login from "../pages/login/Login";
-import Question from "../pages/questions/Question";
+import Question from "../pages/questions/QuestionPage";
 
 
 
