@@ -7,10 +7,28 @@ const QUESTION_3 = "For ten dollars would you slap a baby?";
 
 
 class Question extends Component{
+
+  constructor(num){
+    super(props);
+    this.props.num = num;
+  }
+
+  static getQuestion(num){
+    if(num === 1){
+      return <Text>{QUESTION_1}</Text>
+    }
+    else if(num === 2){
+      return <Text>{QUESTION_2}</Text>
+    }
+    else{
+      return <Text>{QUESTION_3}</Text>
+    }
+  }
+
   render(){
     return(
       <View style = {styles.container}>
-
+        {this.getQuestion(this.props.num)}
       </View>
 
     );
@@ -23,3 +41,6 @@ const styles = {
     flex: 1
   }
 };
+
+
+export default Question;

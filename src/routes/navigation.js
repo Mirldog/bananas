@@ -1,16 +1,15 @@
 import React from 'react-native'
 import {StackNavigator} from 'react-navigation'
 import Login from "../pages/login/Login";
-import Question from "../pages/questions/QuestionPage";
-
+import QuestionPage from "../pages/questions/QuestionPage"
 
 
 const Nav = StackNavigator({
   Login: {
     screen: Login
   },
-  Question: {
-    screen: Question
+  QuestionPage: {
+    screen: QuestionPage
   },
 },
   {
@@ -19,4 +18,4 @@ const Nav = StackNavigator({
   }
 );
 
-export default Nav
+export default Nav;

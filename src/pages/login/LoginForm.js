@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import{StyleSheet, View, TextInput,Text, TouchableOpacity} from 'react-native';
 
-import Question from "../questions/QuestionPage";
+import QuestionPage from "../questions/QuestionPage";
 
 
  class LoginForm extends Component{
@@ -31,7 +31,7 @@ import Question from "../questions/QuestionPage";
         <TouchableOpacity
           style = {styles.button}
           onPress ={() =>
-            this.props.navigation.navigate('Question')
+            this.props.navigation.navigate('QuestionPage')
           }
                   >
           <Text style={styles.text}>

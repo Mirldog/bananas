@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {View, Text, StyleSheet} from 'react-native'
+import {Question} from './Question'
 
 type things = {
   questionNumber: number,
@@ -12,7 +13,7 @@ type things = {
 
 
 
-class Question extends Component<things>{
+class QuestionPage extends Component<things>{
 
   static defaultProps ={
     questionNumber: 1,
@@ -23,6 +24,7 @@ class Question extends Component<things>{
 
    nextQuestion(){
      this.setState({questionNumber: this.props.questionNumber + 1});
+     this.setState({answered: this.props.answered = false});
   }
 
   getQuestionNumber() {
@@ -43,6 +45,9 @@ class Question extends Component<things>{
 
         </Text>
 
+        <Question props = {this.getQuestionNumber()}> </Question>
+
+
       </View>
 
     );
@@ -62,8 +67,9 @@ const styles = StyleSheet.create({
   qnumber:{
     fontSize: 20,
     textAlign: 'center',
-    paddingTop: 25
+    paddingTop: 40,
+    fontWeight: 'bold'
   }
 });
 
-export default Question;
+export default QuestionPage;
