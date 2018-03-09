@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
-import{StyleSheet, View, TextInput,Text, TouchableOpacity,} from 'react-native';
+import{StyleSheet, View, TextInput,Text, TouchableOpacity} from 'react-native';
 
-export default class LoginForm extends Component{
+import Question from "../questions/Question";
+
+
+ class LoginForm extends Component{
+
+
   render(){
     return(
       <View style = {styles.container}>
@@ -12,6 +17,7 @@ export default class LoginForm extends Component{
           returnKeyType='next'
           placeholderTextColor ='rgba(0,0,0,.5)'
           onSubmitEditing = {() => this.password.focus()}
+          ref = {(uname) => this.username = uname}
           autoCapitalize ='none'
           autoCorrect = {false}
         />
@@ -22,7 +28,12 @@ export default class LoginForm extends Component{
           placeholderTextColor ='rgba(0,0,0,.5)'
           ref={(input) => this.password = input}
         />
-        <TouchableOpacity style = {styles.button}>
+        <TouchableOpacity
+          style = {styles.button}
+          onPress ={() =>
+            this.props.navigation.navigate('Question')
+          }
+                  >
           <Text style={styles.text}>
             Login
           </Text>
@@ -32,7 +43,6 @@ export default class LoginForm extends Component{
     );
   }
 }
-
 
 const styles = StyleSheet.create({
   container:{
@@ -73,3 +83,5 @@ const styles = StyleSheet.create({
 
   }
 });
+
+export default LoginForm;

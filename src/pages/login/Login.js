@@ -1,21 +1,26 @@
 import React, {Component} from 'react';
 import {View,Text,StyleSheet,Image, KeyboardAvoidingView} from 'react-native';
+
 import LoginForm from './LoginForm'
 
+
 export default class Login extends Component {
+
   render(){
     return (
       <KeyboardAvoidingView behavior = "padding" style = {styles.container}>
         <View style ={styles.container}>
           <View style = {styles.logoContainer}>
             <Image
-              source = {require('../../../src/img/banana_logo.png')}
+              source = {require('../../img/banana_logo.png')}
               style = {styles.logo}
             />
             <Text style = {styles.title}>Take This Quiz to Find Out What Kind of Banana You Are!</Text>
           </View>
           <View style = {styles.formContainer }>
-            <LoginForm/>
+            <LoginForm
+              navigation = {this.props.navigation}
+            />
           </View>
         </View>
       </KeyboardAvoidingView>

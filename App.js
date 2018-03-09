@@ -1,12 +1,14 @@
-import React from 'react';
-import Login from './src/components/login/Login'
-import {View,StatusBar} from 'react-native'
+import React, {Component} from 'react';
+import Nav from './src/routes/navigation'
 
-export default class App extends React.Component {
+
+class App extends Component {
+
+
   render() {
     return (
 
-      <Login/>
+      <Nav/>
 
 
     );
@@ -14,3 +16,5 @@ export default class App extends React.Component {
 }
 
 
+
+export default App;
