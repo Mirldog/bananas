@@ -16,5 +16,6 @@ class App extends Component {
 }
 
 
+Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT_UP);
 
 export default App;
