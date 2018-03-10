@@ -8,22 +8,22 @@ export default class Login extends Component {
 
   render(){
     return (
-      <KeyboardAvoidingView behavior = "padding" style = {styles.container}>
-        <View style ={styles.container}>
-          <View style = {styles.logoContainer}>
-            <Image
-              source = {require('../../img/banana_logo.png')}
-              style = {styles.logo}
-            />
-            <Text style = {styles.title}>Take This Quiz to Find Out What Kind of Banana You Are!</Text>
+        <KeyboardAvoidingView behavior ="padding" style = {styles.container}>
+          <View style ={styles.container}>
+            <View style = {styles.logoContainer}>
+              <Image
+                source = {require('../../img/banana_logo.png')}
+                style = {styles.logo}
+              />
+              <Text style = {styles.title}>Take This Quiz to Find Out What Kind of Banana You Are!</Text>
+            </View>
+            <View style = {styles.formContainer }>
+              <LoginForm
+                navigation = {this.props.navigation}
+              />
+            </View>
           </View>
-          <View style = {styles.formContainer }>
-            <LoginForm
-              navigation = {this.props.navigation}
-            />
-          </View>
-        </View>
-      </KeyboardAvoidingView>
+        </KeyboardAvoidingView>
     );
   };
 }
@@ -50,7 +50,8 @@ const styles = StyleSheet.create({
     width: 170,
     textAlign: 'center',
     opacity: .8,
-    fontWeight:'bold'
+    fontWeight:'bold',
+    fontSize: 22
   },
   formContainer:{
     marginBottom:50,

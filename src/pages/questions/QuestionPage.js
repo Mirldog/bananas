@@ -47,15 +47,14 @@ class QuestionPage extends Component<things>{
           Question number: {this.getQuestionNumberText()}
 
         </Text>
-
-        <Question style={styles.question} num = {this.getQuestionNumber()}> </Question>
-
+        <View style = {styles.question}>
+          <Question num = {this.getQuestionNumber()}> </Question>
+        </View>
 
       </View>
 
     );
   };
-
 
 }
 
@@ -75,7 +74,10 @@ const styles = StyleSheet.create({
   },
 
   question:{
-    marginBottom: 140
+    paddingTop: 50,
+    paddingHorizontal: 20,
+    marginBottom: 40,
+    flex: 1
   }
 });
 
