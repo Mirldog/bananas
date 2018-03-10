@@ -6,8 +6,16 @@ import QuestionPage from "../questions/QuestionPage";
 
  class LoginForm extends Component{
 
+   constructor(props){
+     super(props);
+     this.state ={
+       username: this.props.username
+     }
+   }
+
 
   render(){
+
     return(
 
       <View style = {styles.container}>
@@ -21,6 +29,7 @@ import QuestionPage from "../questions/QuestionPage";
             placeholderTextColor ='rgba(0,0,0,.5)'
             onSubmitEditing = {() => this.password.focus()}
             ref = {(uname) => this.username = uname}
+            onChangeText ={(text) => this.setState({username: text})}
             autoCapitalize ='none'
             autoCorrect = {false}
           />
@@ -30,11 +39,13 @@ import QuestionPage from "../questions/QuestionPage";
             secureTextEntry
             placeholderTextColor ='rgba(0,0,0,.5)'
             ref={(input) => this.password = input}
+            autoCapitalize = 'none'
+            autoCorrect = {false}
           />
           <TouchableOpacity
             style = {styles.button}
             onPress ={() =>
-              this.props.navigation.navigate('QuestionPage')
+              this.props.navigation.navigate('QuestionPage',this.username)
             }
                     >
             <Text style={styles.text}>

@@ -8,22 +8,22 @@ export default class Login extends Component {
 
   render(){
     return (
-        <KeyboardAvoidingView behavior ="padding" style = {styles.container}>
-          <View style ={styles.container}>
-            <View style = {styles.logoContainer}>
-              <Image
-                source = {require('../../img/banana_logo.png')}
-                style = {styles.logo}
-              />
-              <Text style = {styles.title}>Take This Quiz to Find Out What Kind of Banana You Are!</Text>
-            </View>
-            <View style = {styles.formContainer }>
+        <View style ={styles.container}>
+          <View style = {styles.logoContainer}>
+            <Image
+              source = {require('../../img/banana_logo.png')}
+              style = {styles.logo}
+            />
+            <Text style = {styles.title}>Take This Quiz to Find Out What Kind of Banana You Are!</Text>
+          </View>
+          <View style = {styles.formContainer }>
+            <KeyboardAvoidingView>
               <LoginForm
                 navigation = {this.props.navigation}
               />
-            </View>
+            </KeyboardAvoidingView>
           </View>
-        </KeyboardAvoidingView>
+        </View>
     );
   };
 }

@@ -6,20 +6,21 @@ type things = {
   questionNumber: number,
   answered: boolean,
   score: number,
-  allAnswered:boolean
+  allAnswered:boolean,
+  username: string
 
 };
 
 
 
 
-class QuestionPage extends Component<things>{
+class QuestionPage extends Component{
 
   static defaultProps ={
     questionNumber: 1,
     answered: false,
     score: 0,
-    allAnswered: false
+    allAnswered: false,
   };
 
    nextQuestion(){
@@ -48,7 +49,7 @@ class QuestionPage extends Component<things>{
 
         </Text>
         <View style = {styles.question}>
-          <Question num = {this.getQuestionNumber()}> </Question>
+          <Question num = {this.getQuestionNumber()} username = {this.props.username}> </Question>
         </View>
 
       </View>
@@ -67,14 +68,14 @@ const styles = StyleSheet.create({
   },
 
   qnumber:{
-    fontSize: 20,
+    fontSize: 30,
     textAlign: 'center',
-    paddingTop: 40,
+    paddingTop: 60,
     fontWeight: 'bold'
   },
 
   question:{
-    paddingTop: 50,
+    paddingTop: 20,
     paddingHorizontal: 20,
     marginBottom: 40,
     flex: 1

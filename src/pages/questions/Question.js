@@ -22,10 +22,14 @@ class Question extends Component{
 
   constructor(props){
     super(props);
+    this.setState= {
+      username: this.props.username
+    }
   }
 
   render(){
-    const {num} = this.props;
+    const {num,username} = this.props;
+
     return(
       <View style = {styles.container}>
         {this.getQuestion(num)}
