@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {View, Text, StyleSheet} from 'react-native'
-import {Question} from './Question'
+import Question from './Question'
 
 type things = {
   questionNumber: number,
@@ -45,7 +45,7 @@ class QuestionPage extends Component<things>{
 
         </Text>
 
-        <Question props = {this.getQuestionNumber()}> </Question>
+        <Question num = {this.getQuestionNumber()}> </Question>
 
 
       </View>

@@ -1,34 +1,35 @@
 import React, {Component} from 'react'
 import {View, Text} from 'react-native'
 
-const QUESTION_1 = "What is your stance on puppies?";
+const QUESTION_1 = "Is your body a temple?";
 const QUESTION_2 = "Do you chew with your mouth closed?";
 const QUESTION_3 = "For ten dollars would you slap a baby?";
 
 
 class Question extends Component{
 
-  constructor(num){
-    super(props);
-    this.props.num = num;
-  }
-
-  static getQuestion(num){
-    if(num === 1){
+  getQuestion = (num)=> {
+    console.log(num);
+    if(num == 1){
       return <Text>{QUESTION_1}</Text>
     }
-    else if(num === 2){
+    else if(num == 2){
       return <Text>{QUESTION_2}</Text>
     }
     else{
       return <Text>{QUESTION_3}</Text>
     }
+  };
+
+  constructor(props){
+    super(props);
+
   }
 
   render(){
     return(
       <View style = {styles.container}>
-        {this.getQuestion(this.props.num)}
+        {this.getQuestion({num: this.props.num})}
       </View>
 
     );
@@ -41,6 +42,8 @@ const styles = {
     flex: 1
   }
 };
+
+
 
 
 export default Question;
