@@ -27,11 +27,14 @@ class QuestionPage extends Component<things>{
      this.setState({answered: this.props.answered = false});
   }
 
-  getQuestionNumber() {
+  getQuestionNumberText() {
      if(this.props.answered) this.nextQuestion();
     return (<Text>{this.props.questionNumber}</Text>)
   }
 
+  getQuestionNumber(){
+     return this.props.questionNumber
+  }
 
 
   render(){
@@ -41,11 +44,11 @@ class QuestionPage extends Component<things>{
       <View style = {styles.container}>
         <Text style={styles.qnumber}>
 
-          Question number: {this.getQuestionNumber()}
+          Question number: {this.getQuestionNumberText()}
 
         </Text>
 
-        <Question num = {this.getQuestionNumber()}> </Question>
+        <Question style={styles.question} num = {this.getQuestionNumber()}> </Question>
 
 
       </View>
@@ -69,6 +72,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     paddingTop: 40,
     fontWeight: 'bold'
+  },
+
+  question:{
+    marginBottom: 140
   }
 });
 

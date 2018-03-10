@@ -8,28 +8,27 @@ const QUESTION_3 = "For ten dollars would you slap a baby?";
 
 class Question extends Component{
 
-  getQuestion = (num)=> {
-    console.log(num);
-    if(num == 1){
-      return <Text>{QUESTION_1}</Text>
+  getQuestion = (num) => {
+    if(num === 1){
+      return <Text style = {styles.question}>{QUESTION_1}</Text>
     }
-    else if(num == 2){
-      return <Text>{QUESTION_2}</Text>
+    else if(num === 2){
+      return <Text style = {styles.question}>{QUESTION_2}</Text>
     }
     else{
-      return <Text>{QUESTION_3}</Text>
+      return <Text style = {styles.question}>{QUESTION_3}</Text>
     }
   };
 
   constructor(props){
     super(props);
-
   }
 
   render(){
+    const {num} = this.props;
     return(
       <View style = {styles.container}>
-        {this.getQuestion({num: this.props.num})}
+        {this.getQuestion(num)}
       </View>
 
     );
@@ -39,7 +38,17 @@ class Question extends Component{
 
 const styles = {
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,.2)',
+    paddingTop: 40,
+    paddingBottom: 80,
+    paddingHorizontal: 20
+  },
+  question: {
+    textAlign: 'center',
+    fontSize: 30,
+    fontWeight: 'bold',
+    fontFamily:'Verdana'
   }
 };
 
