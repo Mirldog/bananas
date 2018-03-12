@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
-import {View,Text,StyleSheet,Image, KeyboardAvoidingView} from 'react-native';
+import {View,Text,StyleSheet,Image, KeyboardAvoidingView, TouchableOpacity} from 'react-native';
 
 import LoginForm from './LoginForm'
+import SignUp from "./SignUp";
 
 
 export default class Login extends Component {
 
   render(){
     return (
-        <View style ={styles.container}>
+      <KeyboardAvoidingView style={styles.container}>
+        <View>
           <View style = {styles.logoContainer}>
             <Image
               source = {require('../../img/banana_logo.png')}
@@ -17,13 +19,21 @@ export default class Login extends Component {
             <Text style = {styles.title}>Take This Quiz to Find Out What Kind of Banana You Are!</Text>
           </View>
           <View style = {styles.formContainer }>
-            <KeyboardAvoidingView>
+
               <LoginForm
                 navigation = {this.props.navigation}
               />
-            </KeyboardAvoidingView>
+          </View>
+          <View style={styles.signupContainer}>
+            <TouchableOpacity
+              onPress = {() =>
+              this.props.navigation.navigate('SignUp')}
+            >
+              <Text style={styles.signUpText}>Or Sign Up Here</Text>
+            </TouchableOpacity>
           </View>
         </View>
+      </KeyboardAvoidingView>
     );
   };
 }
@@ -40,22 +50,26 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   logo:{
-    width: 140,
-    height: 140,
-    marginTop: 40
+    height:100,
+    width: 100,
+    marginTop: 25
+
   },
   title:{
-    color: '#130f40',
-    marginTop: 10,
-    width: 170,
+    marginHorizontal:40,
     textAlign: 'center',
-    opacity: .8,
-    fontWeight:'bold',
-    fontSize: 22
+    fontWeight: 'bold',
+    fontSize: 24
   },
-  formContainer:{
-    marginBottom:50,
-    paddingBottom: 50
+  signupContainer:{
+    alignItems:'center',
+    justifyContent: 'center',
+  },
+  signUpText:{
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontSize: 16,
+    textDecorationLine:'underline'
   }
 
 });

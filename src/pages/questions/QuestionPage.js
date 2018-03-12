@@ -37,6 +37,10 @@ class QuestionPage extends Component{
      return this.props.questionNumber
   }
 
+  getUsername(){
+     return this.props.username
+  }
+
 
   render(){
     const {questionNumber, allAnswered, score, answered} = this.props;
@@ -49,7 +53,7 @@ class QuestionPage extends Component{
 
         </Text>
         <View style = {styles.question}>
-          <Question num = {this.getQuestionNumber()} username = {this.props.username}> </Question>
+          <Question num = {this.getQuestionNumber()} username = {this.getUsername()}> </Question>
         </View>
 
       </View>

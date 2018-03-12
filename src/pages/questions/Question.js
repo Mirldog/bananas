@@ -8,9 +8,9 @@ const QUESTION_3 = "For ten dollars would you slap a baby?";
 
 class Question extends Component{
 
-  getQuestion = (num) => {
+  getQuestion = (num,username) => {
     if(num === 1){
-      return <Text style = {styles.question}>{QUESTION_1}</Text>
+      return <Text style = {styles.question}>{username},{QUESTION_1}</Text>
     }
     else if(num === 2){
       return <Text style = {styles.question}>{QUESTION_2}</Text>
@@ -22,9 +22,7 @@ class Question extends Component{
 
   constructor(props){
     super(props);
-    this.setState= {
-      username: this.props.username
-    }
+
   }
 
   render(){
@@ -32,7 +30,7 @@ class Question extends Component{
 
     return(
       <View style = {styles.container}>
-        {this.getQuestion(num)}
+        {this.getQuestion(num,username)}
       </View>
 
     );

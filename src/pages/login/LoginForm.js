@@ -14,14 +14,13 @@ import QuestionPage from "../questions/QuestionPage";
    }
 
 
+
+
   render(){
 
     return(
-
+      <KeyboardAvoidingView>
       <View style = {styles.container}>
-
-        <KeyboardAvoidingView behaior = "padding">
-
           <TextInput
             style={styles.uname}
             placeholder = "Username"
@@ -29,7 +28,6 @@ import QuestionPage from "../questions/QuestionPage";
             placeholderTextColor ='rgba(0,0,0,.5)'
             onSubmitEditing = {() => this.password.focus()}
             ref = {(uname) => this.username = uname}
-            onChangeText ={(text) => this.setState({username: text})}
             autoCapitalize ='none'
             autoCorrect = {false}
           />
@@ -45,16 +43,15 @@ import QuestionPage from "../questions/QuestionPage";
           <TouchableOpacity
             style = {styles.button}
             onPress ={() =>
-              this.props.navigation.navigate('QuestionPage',this.username)
+              this.props.navigation.navigate('QuestionPage',this.state.username)
             }
                     >
             <Text style={styles.text}>
               Login
             </Text>
           </TouchableOpacity>
-        </KeyboardAvoidingView>
-
       </View>
+      </KeyboardAvoidingView>
     );
   }
 }
